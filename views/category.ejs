@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= selectedCategory %> - Do Blog</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <% categories.forEach(cat => { %>
+        <li><a href="/category/<%= cat %>"><%= cat %></a></li>
+      <% }) %>
+    </ul>
+  </nav>
+<div class="hero">
+   <h1><%= selectedCategory %></h1>
+</div>
+  <header>
+   
+  </header>
+
+  <div class="posts-container">
+    <% if (posts.length === 0) { %>
+      <p>No posts in this category.</p>
+    <% } else { %>
+      <% posts.forEach((post, index) => { %>
+        <div class="post-card">
+          <h2><%= post.title %></h2>
+          <p><%= post.content %></p>
+          <small>Category: <%= post.category %></small>
+          <form action="/delete/<%= index %>" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+          <a href="/edit/<%= index %>">Edit</a>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+</body>
+</html>
+<%- include('partials/footer') %>

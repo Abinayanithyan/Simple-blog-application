@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title || "Do Blog" %></title>
+  
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo"><a href="/">Do Blog</a></h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/posts">All Posts</a>
+      <a href="/create" class="btn-primary">Start Blogging</a>
+    </nav>
+  </header>
+
+  <main>
+    <%- body %>
+  </main>
+
+  <footer>
+    <p>© <%= new Date().getFullYear() %> Do Blog. All rights reserved.</p>
+  </footer>
+</body>
+</html>

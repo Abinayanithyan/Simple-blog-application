@@ -1,0 +1,26 @@
+<%- include('partials/header', { 
+  title: "Home - Do Blog", 
+  categories: categories, 
+  selectedCategory: selectedCategory 
+}) %>
+
+<div class="hero">
+  <h1>Create a New Blog Post</h1>
+</div>
+
+<section class="section section-light">
+  <form action="/create" method="POST">
+    <input type="text" name="title" placeholder="Post Title" required>
+    <textarea name="content" placeholder="Write your thoughts..." required></textarea>
+    <select name="category" required>
+      <option value="">Select Category</option>
+      <option value="Tech">Tech</option>
+      <option value="Lifestyle">Lifestyle</option>
+      <option value="Travel">Travel</option>
+      <option value="Food">Food</option>
+    </select>
+    <button type="submit">Publish</button>
+  </form>
+</section>
+
+<%- include('partials/footer') %>

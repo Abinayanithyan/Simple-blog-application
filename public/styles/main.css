@@ -1,0 +1,217 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  background: linear-gradient(90deg, #3a3a3a, #1f1f1f);
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+  background: #ffd700;
+  color: #222;
+  transform: translateY(-2px);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 60vh;
+  background: linear-gradient(270deg, #ff6b6b, #feca57, #48dbfb, #1dd1a1);
+  background-size: 800% 800%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 3rem 2rem;
+}
+
+.section-light {
+  background: #ffffff;
+}
+
+.section-dark {
+  background: #111;
+  color: white;
+}
+
+/* ===== FORMS ===== */
+form {
+  background: white;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+form input[type="text"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+form textarea {
+  max-width: 100%;
+  min-height: 150px;
+  resize: vertical;
+}
+
+form select option:hover {
+  background-color: black !important;
+  color: white !important;
+}
+
+form button {
+  background: #ff6b6b;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #ff4b4b;
+}
+
+/* ===== POSTS ===== */
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.post-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+}
+
+.post-card h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.post-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #1dd1a1;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #10ac84;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 40vh;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,23 @@
+<%- include('partials/header', { title: "All Posts - Do Blog" }) %>
+
+<div class="hero">
+  <h1>All Blog Posts</h1>
+</div>
+
+<section class="section section-light">
+  <div class="posts-container">
+    <% if (posts && posts.length) { %>
+      <% posts.forEach(post => { %>
+        <div class="post-card">
+          <h3><%= post.title %></h3>
+          <p><%= post.content.substring(0, 120) %>...</p>
+          <a href="/posts/<%= post.id %>" class="btn">Read More</a>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>No posts yet.</p>
+    <% } %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

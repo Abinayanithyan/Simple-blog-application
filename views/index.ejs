@@ -1,0 +1,41 @@
+<%- include('partials/header', { 
+  title: "Home - Do Blog", 
+  categories: categories, 
+  selectedCategory: selectedCategory 
+}) %>
+
+<div class="hero">
+  <div>
+    <h1>Share Your Thoughts – Do Blog</h1>
+    <p>Write, share, inspire. Your voice matters here.</p>
+    <a href="/create" class="btn">Start Writing</a>
+  </div>
+</div>
+
+<section class="section section-light">
+  <h2>Latest Posts</h2>
+  <div class="posts-container">
+    <% if (posts && posts.length) { %>
+      <% posts.forEach(post => { %>
+        <div class="post-card">
+          <h3><%= post.title %></h3>
+          <p><%= post.content.substring(0, 100) %>...</p>
+          <a href="/posts/<%= post.id %>" class="btn">Read More</a>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>No posts yet. Be the first to write!</p>
+    <% } %>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <h2>Popular Blogs</h2>
+  <ul class="popular-blogs">
+    <% popularBlogs.forEach(blog => { %>
+      <li><a href="/posts/<%= blog.id %>" style="color: white;"><%= blog.title %></a></li>
+    <% }) %>
+  </ul>
+</section>
+
+<%- include('partials/footer') %>

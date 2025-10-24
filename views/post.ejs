@@ -1,0 +1,17 @@
+<%- include('partials/header', { 
+  title: post.title, 
+  categories: categories, 
+  selectedCategory: selectedCategory 
+}) %>
+
+<div class="hero">
+<p><h1><%= post.title %></h1></p>
+<br>
+</div>
+
+<section class="section section-light">
+<p><em>Category: <%= post.category %></em></p>
+  <p><%= post.content %></p>
+</section>
+
+<%- include('partials/footer') %>

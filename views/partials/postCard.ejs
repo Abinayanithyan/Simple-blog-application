@@ -1,0 +1,18 @@
+<div class="post-card">
+  <div class="post-card-content">
+    <h3 class="post-title"><%= post.title %></h3>
+    <p class="post-excerpt">
+      <%= post.content.length > 150 ? post.content.substring(0, 150) + '...' : post.content %>
+    </p>
+    <div class="post-meta">
+      <span class="post-category"><%= post.category %></span>
+    </div>
+    <div class="post-actions">
+      <a href="/post/<%= post.id %>" class="btn btn-read">Read More</a>
+      <a href="/edit/<%= post.id %>" class="btn btn-edit">Edit</a>
+      <form action="/delete/<%= post.id %>" method="POST" class="delete-form">
+        <button type="submit" class="btn btn-delete">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
