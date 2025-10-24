@@ -1,4 +1,4 @@
-#Simple Blog Application
+# Simple Blog Application
 
 A minimal blog application built using **Node.js**, **Express**, and **EJS**.  
 Users can create, edit, delete, and view blog posts by category — all rendered dynamically with EJS templates.
@@ -25,7 +25,7 @@ Users can create, edit, delete, and view blog posts by category — all rendered
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository**
    ```bash
